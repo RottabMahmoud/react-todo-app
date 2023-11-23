@@ -23,7 +23,6 @@ export default function Header() {
           <Button
             component={Link}
             to="/"
-            variant="outlined"
             style={{ color: "#3f51b5", backgroundColor: "black" }}
           >
             Home
@@ -31,10 +30,23 @@ export default function Header() {
           <Button
             component={Link}
             to="/news"
-            variant="outlined"
-            style={{ color: "#3f51b5", backgroundColor: "black", margin: "  " }}
+            style={{
+              color: "#3f51b5",
+              backgroundColor: "black",
+              margin: "1em",
+            }}
           >
-            News
+            Todos
+          </Button>
+          <Button
+            component={Link}
+            to="/addtodo"
+            style={{
+              color: "#3f51b5",
+              backgroundColor: "black",
+            }}
+          >
+           Add Todo
           </Button>
           <Button
             component={Link}
