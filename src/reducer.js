@@ -7,7 +7,7 @@ const reducer = (state, action) => {
     case "FETCH_NEWS":
       return {
         ...state,
-        data: [1, 345, 246, 24, 5624, 56, 2456, 2456],
+        data: action.payload,
       };
     default:
       return state;
