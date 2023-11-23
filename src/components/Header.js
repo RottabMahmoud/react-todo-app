@@ -30,6 +30,14 @@ export default function Header() {
           </Button>
           <Button
             component={Link}
+            to="/news"
+            variant="outlined"
+            style={{ color: "#3f51b5", backgroundColor: "black", margin: "1em" }}
+          >
+            News
+          </Button>
+          <Button
+            component={Link}
             to="/about"
             variant="outlined"
             style={{

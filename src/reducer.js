@@ -1,22 +1,22 @@
-export const initialState = {
-  home: "HELLO REDUX",
-  about: "VERSION 1.0.0",
-  counter: 0,
-};
+import axios from "axios";
 
+export const initialState = {
+  data: [],
+};
+const fetchNews = async () => {
+  const response = await axios.get(
+    "https://jsonplaceholder.typicode.com/todos"
+  );
+  console.log(response.data);
+};
 const reducer = (state, action) => {
   switch (action.type) {
-    case "ADD":
-      console.log(state.counter, "ADDING");
+    case "FETCH_NEWS":
+      fetchNews();
+      console.log(state.data, "REDUX");
       return {
         ...state,
-        counter: state.counter+1,
-      };
-    case "DECREMENT":
-      console.log(state.counter, "DECREMENTING");
-      return {
-        ...state,
-        counter: state.counter-1,
+        data: ["EMPTY ARRAY"],
       };
     default:
       return state;
