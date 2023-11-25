@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 import { useStateValue } from "../StateProvider";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import { alertTitleClasses } from "@mui/material";
 
 function AddTodo() {
   const [{ data }, dispatch] = useStateValue();

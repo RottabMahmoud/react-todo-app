@@ -43,6 +43,11 @@ const reducer = (state, action) => {
       return {
         ...state,
       };
+    case "DELETE_TODO":
+      return {
+        ...state,
+        data: state.data.filter((x) => x.id !== action.payload),
+      };
     default:
       return state;
   }

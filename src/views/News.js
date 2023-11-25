@@ -5,7 +5,7 @@ import { useStateValue } from "../StateProvider";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { dblClick } from "@testing-library/user-event/dist/click";
+import Button from "@mui/material/Button";
 
 function News() {
   const [{ data }, dispatch] = useStateValue();
@@ -29,17 +29,33 @@ function News() {
     });
   };
   const cards = data.map((card) => (
-    <Card className="cards" key={card.id} sx={{ maxWidth: 345 }}>
-      <CardContent
-        onDoubleClick={(e) => dblClick(card.id)}
-        className={card.completed ? "done" : "unDone"}
-      >
+    <Card
+      onDoubleClick={(e) => dblClick(card.id)}
+      className="cards"
+      key={card.id}
+      sx={{ maxWidth: 345 }}
+    >
+      <CardContent className={card.completed ? "done" : "unDone"}>
         <Typography gutterBottom variant="h5" component="div">
           {card.title}
         </Typography>
       </CardContent>
+      <Button
+        onClick={() => dispatch({ type: "DELETE_TODO", payload: card.id })}
+        variant="contained"
+      >
+        DEL
+      </Button>
     </Card>
   ));
+  {
+    /* <Button
+        onClick={() => dispatch({ type: "DELETE_TODO", payload: card.id })}
+        variant="contained"
+      >
+        Delete
+      </Button> */
+  }
 
   return <div className="cards">{cards}</div>;
 }
