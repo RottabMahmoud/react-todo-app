@@ -13,7 +13,7 @@ function News() {
     axios.get("https://jsonplaceholder.typicode.com/todos").then((res) => {
       console.log(res.data);
       dispatch({
-        type: "FETCH_NEWS",
+        type: "FETCH_TODOS",
         payload: res.data,
       });
     });
