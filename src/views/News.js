@@ -5,8 +5,8 @@ import { useStateValue } from "../StateProvider";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 function News() {
   const [{ data }, dispatch] = useStateValue();
 
@@ -40,22 +40,13 @@ function News() {
           {card.title}
         </Typography>
       </CardContent>
-      <Button
-        onClick={() => dispatch({ type: "DELETE_TODO", payload: card.id })}
-        variant="contained"
-      >
-        DEL
-      </Button>
+      <IconButton aria-label="delete">
+        <DeleteIcon
+          onClick={() => dispatch({ type: "DELETE_TODO", payload: card.id })}
+        />
+      </IconButton>
     </Card>
   ));
-  {
-    /* <Button
-        onClick={() => dispatch({ type: "DELETE_TODO", payload: card.id })}
-        variant="contained"
-      >
-        Delete
-      </Button> */
-  }
 
   return <div className="cards">{cards}</div>;
 }
