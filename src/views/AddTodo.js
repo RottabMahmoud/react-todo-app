@@ -23,21 +23,21 @@ function AddTodo() {
     const post = {
       id: Math.random(),
       title: value,
-      checked,
+      completed: checked,
     };
     if (post.title) {
-      const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/todos",
-        post // Posting to the Server
-      );
+      // const response = await axios.post(
+      //   "https://jsonplaceholder.typicode.com/todos",
+      //   post // Posting to the Server
+      // );
       // console.log(post, "POST");
-      console.log(response.data, "POST");
-
+      // console.log(response.data, "POST");
+      console.log(post, "NEW TODO");
       setValue("");
       setChecked(false);
       dispatch({
         type: "ADD_TODO",
-        payload: response.data,
+        payload: post,
       });
     } else alert("Please Insert a Todoo");
   };
