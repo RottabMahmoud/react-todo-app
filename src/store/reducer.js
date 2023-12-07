@@ -21,6 +21,7 @@ export const initialState = {
       completed: true,
     },
   ],
+  about: "Todo App V1.0.0",
 };
 const reducer = (state, action) => {
   console.log(action, "ACTIOn");
@@ -31,7 +32,6 @@ const reducer = (state, action) => {
     //     data: action.payload,
     //   };
     case "ADD_TODO":
-      let arr = initialState.data;
       return {
         ...state,
         data: [action.payload, ...state.data],

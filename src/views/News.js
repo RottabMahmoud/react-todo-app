@@ -21,7 +21,7 @@ function News() {
   // }, []);
 
   const dblClick = (id) => {
-    console.log(id, "IDs");
+    // console.log(id, "IDs");
 
     dispatch({
       type: "FILTER_TODO",
